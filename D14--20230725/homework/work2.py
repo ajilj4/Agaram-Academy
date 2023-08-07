@@ -45,7 +45,7 @@ three_gens = trends_mart[0]['available_for'][0]["categ"]
 position=0
 for gend in trends_mart[0]["available_for"] :
     if gend==gender and gender==a :
-        position=position+1
+        position=position+gend
         print(gend)
 
 

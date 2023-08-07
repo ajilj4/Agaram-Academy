@@ -64,7 +64,7 @@ if entry == "gold":
                                 },
                                 {
                                     "name":"ring",
-                                    "making_charge":78
+                                    "making_charge":9
                                 }]
                         },
                         {

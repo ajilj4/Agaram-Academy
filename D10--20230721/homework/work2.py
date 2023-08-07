@@ -1,6 +1,6 @@
 mixedList = [1, 2.0, "hai", "@", 5, 6, "&", 8, 9 ]
 r_no = 0
-noo=0
+#noo=0
 for  lis in mixedList:
     if type(lis)==int:
         r_no=r_no+1

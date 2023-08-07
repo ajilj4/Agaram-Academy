@@ -17,8 +17,9 @@ user_details = [
         
         
 for student in user_details:
-    print(student['marks'])
+    print(student['mark'])
     total = 0
     for x in student['marks']: 
         total = total + x
+
     print(total)

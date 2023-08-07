@@ -4,6 +4,7 @@ items_list = [
     {'name': 'Banana', 'category': 'Fruits'},
     {'name': 'Broccoli', 'category': 'Vegetables'},
 ]
+
 lis={}
 frut=[]
 veg=[]

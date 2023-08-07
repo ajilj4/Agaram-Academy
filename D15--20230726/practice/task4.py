@@ -15,9 +15,6 @@ def max(a,b) :
             print("no is odd")
         else:
             print("even")
-    if c%2==0 :
-        print("even")
-    else:
-        print("odd")
+        
 
 max(no_1,no_2)

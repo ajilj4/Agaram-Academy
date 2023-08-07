@@ -1,9 +1,8 @@
-def gender_n() :
-    gender=input("enter the gender")
-    if gender=="male":
-        print("color is blue")
-    elif gender=="female":
-        print("color is pink")
+firnam=input()
+lasnam=input()
 
-gender_n()
+def combine_name(a,b) :
+    print(a+""+b)
+
+combine_name(firnam,lasnam)
 

@@ -49,7 +49,7 @@ for student in students_data:
     for attendance_data in student["attendance"]:
         total_working_days += attendance_data["total_working_days"]
         total_leaves += attendance_data["leave"]
-    print(total_leaves)
+
     attendance_percentage = ( (total_working_days - total_leaves) / total_working_days ) * 100
 
     if (math_score < 35 or science_score < 35) and attendance_percentage < 80:
