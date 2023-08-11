@@ -1,13 +1,11 @@
-str = "the quick brown fox jumps over the lazy dog the quick brown fox"
-string=str.split()
-print(string[0])
-output={}
-# for j in range(len(string)):
-#     for i in string:
-#         if string[j]==i:
-#             output.update({i:string[j]})
-for i in string:
-    n=0
-    if i is not in output:
-    output.update({i:})
-print("output = ",output)
+str1 = "the quick brown fox jumps over the lazy dog the quick brown fox the"
+string=str1.split()
+
+dictn={}
+for wrd in string:
+    if wrd not in dictn:
+        dictn[wrd]=1
+    else:
+        
+        dictn[wrd]+=1
+print(dictn)

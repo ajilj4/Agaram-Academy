@@ -7,5 +7,3 @@ def combine_name(a,b) :
 
 
 combine_name(firnam,lasnam)
-
-
