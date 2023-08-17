@@ -6,70 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
-            padding-left: 10%;
-            padding-top: 25px;
+        
+        .container {
+
+            margin-left: 80px;
+            margin-right: 80px;
+            padding: 5% 15%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        lable{
+            border: 3px solid rgb(14, 14, 14);
+            word-spacing: 5px;
+            font-size: large;
+            letter-spacing: 1px;
             
+
         }
+        
+        
+        
+        h4{
+            border-left: 6px solid rgb(149, 153, 153);
+        }
+        .profile{
+            display: flex;
+            flex-direction: column ;
+        }  
+         
+            
+        
     </style>
 </head>
 
 <body>
-    <h3 ALIGN="CENTER">RESUME</h3>
+    <h2 ALIGN="CENTER">RESUME</h2>
     <form>
         <div class="container">
-        <lable>Name: </lable><input type="text" /><br />
-        <lable>Job Title: </lable><input type="text" /><br />
-        <lable>Email: </lable><input type="email" /><br/>
-        <lable>Objective: </lable><input /><br/>
-        <h4>Expereience </h4>
-        <label>Company Name: </label><textarea name="company"></textarea><br/>
-        <lable>Role: </lable><textarea name="role"></textarea><br/>
-        <lable>Years: </lable>
-        <select name="year" id="year">
-            <option value="-">-</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3-5">3-5</option>
-            <option value="5-9">5-9</option>
-            <option value="10+">10+</option>
-        <lable>Job Discription: </lable><textarea name="job"></textarea><br/>
-        <h4>Education</h4>
-        <lable>Institute: </lable><input type="search"/><br/>
-        <lable>Degree: </lable>
-        <select name="degree" id="degree">
-            <option value="-">-</option>
-            <option value="B.E">B.E</option>
-            <option value="B.Sc">B.Sc</option>
-            <option value="M.Sc">M.Sc</option>
-            <option value="B.Ed">B.Ed</option>
-            <option value="other">Other</option>
-        </select><br>
-        <lable>Year of passout: </lable><input type="date"/><br/>
-        <lable>Percentage: </lable><input type="number"/><br/>
-        <h4>Project</h4>
-        <lable>Project Name: </lable><textarea name="job"></textarea><br/>
-        <lable>Project Description: </lable><textarea name="job"></textarea><br/>
-        <h4>Skills: </h4>
-        <lable>Area of Interest:</lable><input type="text"/><br/>
-        <lable>Hobbies: </lable><textarea name="hobbies">Enter your hobbies</textarea><br/>
-        <h4>Personal details</h4>
-        <lable>D.O.B: </lable><input type="date"/><br/>
-        <lable>Age: </lable><input type="number"/><br/>
-        <lable>Phone No: </lable><input /><br/>
-        <lable>Gender: </lable><input type="checkbox"/>Male<input type="checkbox"/>Female <input type="checkbox"/>Other<br/>
-        <lable>Father Name: </lable><input type="text"/><br/>
-        <lable>Occupation: </lable><input type="text"/><br/>
-        <lable>Mob No: </lable><input/><br/>
-        <lable>Religion: </lable><input type="text"/><br/>
-        <lable>Language: </lable><input type="checkbox"/>English<input type="checkbox"/>Tamil <input type="checkbox"/>Malayalam <input type="checkbox"/>Hindi<br/>
-        <lable>Address: </lable><textarea name="address" cols="50" rows="10"></textarea><br/>
+            <div class="profile">
+                <lable>Name: </lable><input type="text" id="resume" /><br />
+                <lable>Job Title: </lable><input type="text" id="resume" /><br />
+                <lable>Email: </lable><input type="email" /><br />
+                <lable>Objective: </lable><input /><br />
+            </div>
+            <div class="profile">
+                <h4>Expereience </h4>
+                <label>Company Name: </label><textarea name="company"></textarea><br />
+                <lable>Role: </lable><textarea name="role"></textarea><br />
+                <lable>Years: </lable>
+                <select name="year" id="year">
+                    <option value="-">-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3-5">3-5</option>
+                    <option value="5-9">5-9</option>
+                    <option value="10+">10+</option>
+                    <lable>Job Discription: </lable><textarea name="job"></textarea><br />
+            </div>
+            <div class="profile">
+                <h4>Education</h4>
+                <lable>Institute: </lable><input type="search" /><br />
+                <lable>Degree: </lable>
+                <select name="degree" id="degree">
+                    <option value="-">-</option>
+                    <option value="B.E">B.E</option>
+                    <option value="B.Sc">B.Sc</option>
+                    <option value="M.Sc">M.Sc</option>
+                    <option value="B.Ed">B.Ed</option>
+                    <option value="other">Other</option>
+                </select><br>
+                <lable>Year of passout: </lable><input type="date" /><br />
+                <lable>Percentage: </lable><input type="number" /><br />
+            </div>
+            <div class="profile">
+                <h4>Project</h4>
+                <lable>Project Name: </lable><textarea name="job"></textarea><br />
+                <lable>Project Description: </lable><textarea name="job"></textarea><br />
+                <h4>Skills: </h4>
+                <lable>Area of Interest:</lable><input type="text" /><br />
+                <lable>Hobbies: </lable><textarea name="hobbies">Enter your hobbies</textarea><br />
+            </div>
+            <div class="profile">
+                <h4>Personal details</h4>
+                <lable>D.O.B: </lable><input type="date" /><br />
+                <lable>Age: </lable><input type="number" /><br />
+                <lable>Phone No: </lable><input /><br />
+                <lable>Gender: </lable><input type="checkbox" />Male<input type="checkbox" />Female <input
+                    type="checkbox" />Other<br />
+                <lable>Father Name: </lable><input type="text" /><br />
+                <lable>Occupation: </lable><input type="text" /><br />
+                <lable>Mob No: </lable><input /><br />
+                <lable>Religion: </lable><input type="text" /><br />
+                <lable>Language: </lable><input type="checkbox" />English<input type="checkbox" />Tamil <input
+                    type="checkbox" />Malayalam <input type="checkbox" />Hindi<br />
+                <lable>Address: </lable><textarea name="address" cols="50" rows="10"></textarea><br />
+            </div>
         </div>
-    </form>    
-    
+    </form>
+
 </body>
 
 </html>
