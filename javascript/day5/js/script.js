@@ -1,5 +1,16 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyCyOgfPibvrWjQJ9VKus8cpxegiMVQMPKc",
+    authDomain: "ogin--register--webpage.firebaseapp.com",
+    databaseURL: "https://ogin--register--webpage-default-rtdb.firebaseio.com",
+    projectId: "ogin--register--webpage",
+    storageBucket: "ogin--register--webpage.appspot.com",
+    messagingSenderId: "72285358001",
+    appId: "1:72285358001:web:73c6fcd0eab88dcb6d9f90"
+  };
 
+firebase.initializeApp(firebaseConfig);
 
+var loginformDB= firebase.database().ref("loginform")
 // let userDetails=[
 //         {
 //         email:"ajilj@gmail.com",
@@ -202,6 +213,8 @@ function forpasswordfn(){
         window.location="login.html"
 
     }
+
+    
 
 
 
