@@ -1,16 +1,28 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCyOgfPibvrWjQJ9VKus8cpxegiMVQMPKc",
-    authDomain: "ogin--register--webpage.firebaseapp.com",
-    databaseURL: "https://ogin--register--webpage-default-rtdb.firebaseio.com",
-    projectId: "ogin--register--webpage",
-    storageBucket: "ogin--register--webpage.appspot.com",
-    messagingSenderId: "72285358001",
-    appId: "1:72285358001:web:73c6fcd0eab88dcb6d9f90"
+    
+
+        apiKey: "AIzaSyA95ihC-LnszUkBiBHjbDFobzlAO7yIz4o",
+    
+        authDomain: "login-register-ae0a0.firebaseapp.com",
+    
+        databaseURL: "https://login-register-ae0a0-default-rtdb.firebaseio.com",
+    
+        projectId: "login-register-ae0a0",
+    
+        storageBucket: "login-register-ae0a0.appspot.com",
+    
+        messagingSenderId: "409114406393",
+    
+        appId: "1:409114406393:web:cf66315662dc3669126128"
+    
   };
 
 firebase.initializeApp(firebaseConfig);
 
-var loginformDB= firebase.database().ref("loginform")
+let alldata=[]
+var db= firebase.database();
+let dataes = db.ref("user")
+// // let loginform=db.ref("user")
 // let userDetails=[
 //         {
 //         email:"ajilj@gmail.com",
@@ -28,117 +40,118 @@ var loginformDB= firebase.database().ref("loginform")
 //         name:"ajay"
 //     }
 //     ]
-    
-//     localStorage.setItem("user",JSON.stringify(userDetails))
+//     let a=db.ref("user").set(userDetails)
+//     console.log(a)
+// //     // let ref = firebase.database().ref("/userProfile/"+this.userId);
+
+// //     loginformDB.child("workouts").push(userDetails);
+//     // localStorage.setItem("user",JSON.stringify(userDetails))
 function loger(){
     alert("Success")
 }
 function loginCheck(){
     let login_email=document.getElementById("emails").value;
     let login_password=document.getElementById("passwords").value;
-    var details=JSON.parse(localStorage.getItem("user"))
-    for (var i=0;i<details.length;i++){
-        var e=details[i].email
-        var p=details[i].password
-        var n=details[i].name
+    dataes.once(`value`).then(shot=>{
+        let data = shot.val();
+        console.log(data)
+    
+    for (let i=0;i<data.length;i++){
+        var e=data[i].email
+        var p=data[i].password
+        var n=data[i].name
         // console.log(details[i].email,details[i].password,details[i].name)
         if (e==login_email&&p==login_password){
             localStorage.setItem("loggedIn",true)
             localStorage.setItem("loginperson",n)
-            // document.getElementById("login").style.display="none"
-            // document.getElementById("top").style.display="block"
-            
-            console.log()
+             
             window.location="home.html"
             box()
 
-        // alert("Success")
-        }}
-        // if(localStorage.getItem("loggedIn")===true){
-
-
-}
-// function loginCheck(){
-//     if(localStorage.getItem('loggedIn')){
-//          a=localStorage.getItem("logging")
-//         document.getElementById('welcome').innerHTML=welcome `${n}`
-//         // window.location="home.html"
-//         getdata()
+         alert("Success")
         
-//     }
-// }
+        }
+}})
+    }
+
+
 function logout(){
     localStorage.removeItem("loggedIn")
     window.location="login.html"
-    // document.getElementById("login").style.display="block"
-    // document.getElementById("top").style.display="none"
-}
-// function loging(){
-//     if(localStorage.getItem("loggedIn",true)){
-//     document.getElementById("login").style.display="none"
-//     document.getElementById("top").style.display="block"
-//     // document.getElementById("intro").innerHTML=`Welcome ${n}`
-// }}
-function register(){
+ }
+ function register(){
     let name_obj= document.getElementById("name").value;
     let email_obj= document.getElementById("email").value;
     let password_obj= document.getElementById("password").value;
-    // let profile={};
-    // profile.names=name_obj;
-    // profile.emails=email_obj;
-    // profile.passwords=password_obj;
-    // console.log(profile)
-    // localStorage.setItem("new_list",profile)
-    if(localStorage.getItem("user")){
-        parselocaldata= JSON.parse(localStorage.getItem("user"))
+
+    dataes.once(`value`).then(shot=>{
+        let data = shot.val();
+        console.log(data)
+
+    for(i=0;i<data.length;i++){
+       if(email_obj != data[i].email){ 
+        reg_data={
+            email: email_obj,
+            password:password_obj,
+            name: name_obj
+        }
+
+    if(data){
+        data.push(reg_data);
+        db.ref('user').set(data);
     }
     else{
-        let parselocaldata=[]
+        db.ref(`user/${0}`).set(reg_data);
     }
     
-    console.log(parselocaldata)
-    parselocaldata.push({
-        email: email_obj,
-        password:password_obj,
-        name: name_obj
-    })
-    localStorage.setItem("user",JSON.stringify(parselocaldata));
     alert("succesfully registred.login")
     window.location="login.html"
 }
+    else if(email_obj===data[i].email){
+        alert("your email is already registered")
+        break
+    }
+}
+})
+}
 
 function regpage(){
-    window.location="register.html"
-    // document.getElementById("register").style.display="block"
-    // document.getElementById("login").style.display="none"
-    
+    window.location="register.html"    
 }
 
 
 
-// let list=["a","b","c"];
+// // let list=["a","b","c"];
 function box(){
-let person= localStorage.getItem("personin")
+let person= localStorage.getItem("loginperson")
 document.getElementById("intro").innerHTML=`Welcome ${person}`
-let listt=localStorage.getItem("user")
-    console.log(listt)
-let o_list=JSON.parse(listt) 
 
-   
+dataes.once(`value`).then(shot=>{
+    let data = shot.val();
+
+// let o_list=data;
+
+// console.log(o_list)
+  
 let htmldata="";
-for (let i=0;i<o_list.length;i++){
+for (let i=0;i<data.length;i++){
     htmldata=htmldata+`<tr>
-    <td id="newname+'${i}'">${o_list[i].name}</td>
-    <td id="newemail+'${i}'">${o_list[i].email}</td>
-    <td><button onclick="update('${o_list[i].email}')">update</button></td>
-    <td><button onclick="deletes('${o_list[i].email}')">delete</button></td>
+    <td id="newname+'${i}'">${data[i].name}</td>
+    <td id="newemail+'${i}'">${data[i].email}</td>
+    <td align="center"><button onclick="update('${data[i].email}')">update</button></td>
+    <td align="center"><button onclick="deletes('${data[i].email}')">delete</button></td>
     <tr>`
 }
 document.getElementById("list-table").innerHTML=htmldata;
+})
 }
 
 function deletes(mail){
-        let a=JSON.parse(localStorage.getItem("user"))
+
+    dataes.once(`value`).then(shot=>{
+        let data = shot.val();
+
+        let a=data;
         console.log(a)
         let newdata=[]
         for(i=0;i<a.length;i++){
@@ -148,27 +161,29 @@ function deletes(mail){
             }
         }
         alert(mail)
-        let newlist=JSON.stringify(newdata)
-        localStorage.setItem("user",newlist)
+        // let newlist=JSON.stringify(newdata)
+        // localStorage.setItem("user",newlist)
+        db.ref("user").set(newdata)
         box()
-
+    })
 }
 
 function update(mail){
-let b=JSON.parse(localStorage.getItem("user"))
-console.log(b)
 
-// alert(mail)
+    dataes.once("value").then(snapahot=>{
+        let b=snapahot.val()
+    
+
 for (i=0;i<b.length;i++){
     if (b[i].email===mail){
         let pname =prompt(`name`,`${b[i].name}`)
         let pmail =prompt(`email`,`${b[i].email}`)
         console.log(pname)
-        if (pname != b[i].name) {
+        if (pname != null) {
             document.getElementById(`newname+'${i}'`).innerHTML = pname;
             console.log(pname)               
        }
-        if(pmail != b[i].email) {
+        if(pmail != null) {
             document.getElementById(`newemail+'${i}'`).innerHTML = pmail;
             console.log(pmail)
                 }console.log(b[i].password)
@@ -178,12 +193,13 @@ for (i=0;i<b.length;i++){
             name: pname
         })
 }
-}localStorage.setItem("user",JSON.stringify(b))
-console.log(b)
+}db.ref("user").set(b)
+console.log(b)})
 }
-console.log("hhggf")
+// console.log("hhggf")
+
 function secure(){
-    console.log('jjj')
+    
     if(!localStorage.getItem("loggedIn")){
         window.location="login.html"
        
@@ -194,8 +210,11 @@ function secure(){
 
 function forpasswordfn(){
     // alert("hi")
+    dataes.once(`value`).then(shot=>{
+        let data = shot.val();
+
     let forpassinput=document.getElementById("forgetemail").value;
-    let fpassword=JSON.parse(localStorage.getItem("user"));
+    let fpassword=data;
     // if (forpassinput in fpassword.email){
     for (let i=0;i<fpassword.length;i++){
         if (forpassinput==fpassword[i].email){
@@ -203,11 +222,15 @@ function forpasswordfn(){
             document.getElementById("fpassword").style.display="block";
             paswd=fpassword[i].password
             document.getElementById("fpas").innerHTML=" : "+paswd
-
         }
-    // }
+        else if(forpassinput != fpassword[i].email){
+            alert("email not registered")
+            break
+        }
+    }
+})
+    }
 
-    }}
     function comebackloginpage(){
         alert("ok")
         window.location="login.html"

@@ -1,0 +1,16 @@
+div{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    border: 3px solid rgb(23, 23, 48);
+    margin: 10px;
+}
+body{
+    background-color: blue;
+}
+p{
+    margin:50px;
+    background-color: antiquewhite;
+    width: 200px;
+    height: 300px;
+}

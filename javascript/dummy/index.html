@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <form id="contactform">
+        <div class="name">
+           Name <input type="text" id="name" placeholder="enter your name"/>
+        </div>
+        <div class="emailid">
+            E-Mail_id:<input type="email" id="mailid" placeholder="enter the email"/>
+        </div>
+        <div class='password'>
+            password:<input type="password" id="password" placeholder="type the passcode"/>
+        </div>
+        <div class="sumbitbox">
+            <button type="button" onclick="register()">submit</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
