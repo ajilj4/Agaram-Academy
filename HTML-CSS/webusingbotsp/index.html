@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .container-mg{
+            background-image: url("https://d334lak5lb2pjo.cloudfront.net/wp-content/uploads/b2b-web-design-examples-min.jpg");
+            height: 100vh;
+            background-position-x: -90px;
+            background-repeat: no-repeat;
+            /* background-position-y: -10px; */
+            /* position: fixed;
+            top: 0;
+             */
+        }
+        .gap{
+            height: 50px;
+        }
+        .navbr{
+            /* width: 100%; */
+            height: 60px;
+            border-radius: 30px;
+            margin: 0% 2%;
+            position: relative;
+            /* position: fixed; */
+        }
+        .navbr img{
+            position: absolute;
+            top: -40px;
+            left: 41.5%;
+            transform: translate(-50px,-11%);
+            width: 250px;
+            /* position: sticky;
+            top:0 */
+            
+        }
+        .navbr form{
+            margin-left: 70%;
+            margin-top: -50px;
+            margin-right: 15px;
+            /* border-radius: 10px; */
+        }
+        .navbr form button{
+            border-radius: 20px;
+        }
+        .navbr form input{
+            border-radius: 20px;
+            min-width: 150px;
+        }
+        .navbr a{
+            margin: 18px 1%;
+            font-size: medium;
+        }
+       main{
+        margin: 5% 0 0 5%;
+        margin-right: 3%;
+        float: right ;
+        /* display: flex ; */
+        min-width: 300px;
+        width: 500px;
+        padding: 25px;
+        background-image: linear-gradient(#02b0cb,#094382);
+        /* background-color: rgb(215, 215, 225); */
+        border-radius: 30px;
+        box-shadow: 0 0.5em 2em wheat;
+       }
+       main h3{
+        padding: 5px 0px 50px 0px;
+       }
+       main img{
+        margin-left: 39%;
+       }
+        
+        /* button{
+            margin: 10px 0px;
+        } */
+        /* input{
+            margin: 5px 0;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container-mg">
+        <div class="gap"></div>
+        <nav class="navbr" style="background-color: #141415;">
+            <a href="#" class="badge rounded-pill text-bg-dark">HOME</a>
+            <a href="#" class="badge rounded-pill text-bg-dark">ABOUT</a>
+            <a href="#" class="badge rounded-pill text-bg-dark">CONTACT</a>
+            <a href="#" class="badge rounded-pill text-bg-dark"></a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+          
+            <!-- Navbar content -->
+            <!-- <button type="button" class="btn ">Primary</button>
+<button type="button" class="btn ">Secondary</button>
+<button type="button" class="btn-outline-light btn">Success</button>
+<button type="button" class="btn btn-outline-light">Danger</button> -->
+<!-- <button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-light">Light</button>
+<button type="button" class="btn btn-outline-dark">Dark</button> -->
+            <img src="mid.png" alt="agaram">
+            
+          </nav>
+<main>
+    <img src="mid.png" alt="agaram" width="20%">
+    <form class="row g-3">
+        
+        <h3 align="center">REGISTER</h3>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+</main>
+      
+    </div>
+</body>
+
+</html>

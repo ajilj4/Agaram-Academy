@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+/* body{
+    background-color: rgb(222, 242, 235);
+    margin: 15px;
+    
+} */
+.header{
+    width: 100%;
+    min-height: 200px;
+    background-color: white;
+    color: #def2eb;
+    /* border: 5px 5px 0 5px solid wheat; */
+    margin-bottom: 0;
+    background-image: url("https://youteam.io/blog/wp-content/uploads/2020/12/markus-spiske-hvSr_CVecVI-unsplash-min-1920x500.jpg");
+}
+h1{
+    padding-top: 70px;
+    font-family:Impact;
+}
+.header p{
+    text-align: center;
+    padding-top: 35px;
+    
+}
+/* .logo{
+    width: 100px;
+    line-height: 0;
+    margin-right: 20%;
+} */
+#navbarSupportedContent a{
+    background-color: #212529;
+}
+.navigation{
+    border-top: 2px dotted white;
+    border-radius: 50px;
+    margin-top: 0;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    /* background-color: rgb(16, 15, 15); */
+    color: white;
+    margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: 1px 1px 10px rgb(76, 67, 67);
+}
+
+#navbarSupportedContent a{
+    padding-left: 20px;
+    color: white;
+}
+#navbarSupportedContent a:hover{
+    border-bottom: 2px solid white;
+    border-radius: 50px;
+    color: yellow;
+}
+.container_A{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+.content{
+    margin: 15px;
+}
+.responsive{
+    position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+iframe{
+    position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.left{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+}
+.box1{
+    background-color: white;
+    margin-bottom: 1%;
+}
+h2{
+    padding: 40px 0px;
+}
+h5{
+    padding: 0px 0px 20px 0px;
+}
+.box2{
+    background-color: white;
+}
+.right{
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+}
+.left .box3{
+    margin-top: 1%;
+}
+h3{
+    padding: 25px 0 25px 0;
+}
+.box3{
+    margin-bottom: 15px;
+    background-color: white;
+    /* flex-wrap: wrap; */
+}
+.box3 p{
+    font-size: 1em;
+}
+.boxbuy .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card:hover{
+    transform:scale(1.1);
+}
+.box4{
+    background-color: white;
+    margin-bottom: 2%;
+}
+.box5{
+    background-color: white;
+    position: sticky;
+    top: 100px;
+}
+.box5 i{
+    font-size: xx-large;
+    padding-right: 4%;
+}
+.footer{
+    width: 100%;
+    min-height: 100px;
+    background-color: darkgrey;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bolder;
+    margin-bottom: 1%;
+}
+
+.bn53 {
+    background-color:green;
+    color: white;
+    padding: 7px;
+    width: 130px;
+    border-radius: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: bn53bounce 4s infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes bn53bounce {
+    5%,
+    50% {
+      transform: scale(1);
+    }
+  
+    10% {
+      transform: scale(1);
+    }
+  
+    15% {
+      transform: scale(1);
+    }
+  
+    20% {
+      transform: scale(1) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1) rotate(0);
+    }
+  }
