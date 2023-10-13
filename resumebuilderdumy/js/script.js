@@ -31,6 +31,16 @@ function addmultidata(name,id,tbl_id,ary_obj){
         }
         temp={}
         display()
+       
+        document.getElementById("list_heade").innerHTML=`<tr>
+        <th scope="col">level</th>
+        <th scope="col">intitute</th>
+        <th scope="col">precentage</th>
+        <th scope="col">year</th>
+        <th scope="col">delete</th>
+      </tr>`
+
+        if(ary_obj==="educational_details"){
         htmldata=""
         for(i=0;i<resume_user[ary_obj].length;i++){
             console.log(resume_user[ary_obj][i])
@@ -41,8 +51,31 @@ function addmultidata(name,id,tbl_id,ary_obj){
             <td>${resume_user[ary_obj][i].year}</td>
             <td><button type="button" onclick="delet('${[i]}','${ary_obj}')">x</button></td>
             </tr></table>`}
-        console.log(htmldata)
-        document.getElementById(tbl_id).innerHTML=htmldata
+            console.log(htmldata)
+            document.getElementById(tbl_id).innerHTML=htmldata}
+
+            document.getElementById("list_headw").innerHTML=` <tr>
+            <th scope="col">Work</th>
+            <th scope="col">Role</th>
+            <th scope="col">year</th>
+            
+            <th scope="col">delete</th>
+          </tr>`
+        if (ary_obj==="work_exp"){
+            htmldata=""
+        for(i=0;i<resume_user[ary_obj].length;i++){
+            console.log(resume_user[ary_obj][i])
+            htmldata=htmldata+`<table class="table table-striped"><tr id="${ary_obj[i]}">
+            <td>${resume_user[ary_obj][i].Company}</td>
+            <td>${resume_user[ary_obj][i].role}</td>
+            <td>${resume_user[ary_obj][i].year}</td>
+            
+            <td><button type="button" onclick="delet('${[i]}','${ary_obj}')">x</button></td>
+            </tr></table>`}
+            console.log(htmldata)
+            document.getElementById(tbl_id).innerHTML=htmldata}
+        
+        
     }
     else{
         if(!resume_user[name]){
@@ -95,6 +128,7 @@ function save(){
     })
     alert("Successfully Saved")
     window.location="list.html"
+    // show_list()
 }
 
 function showlist(){
@@ -115,7 +149,8 @@ function show_list(){
                 // let jso=user_data.data[0].data
                 // let jon=JSON.parse(jso)
                 // console.log(jon.user_name)
-                let listing=""
+                let listing="";
+                let showtemp="";
                 for (i=0;i<user_data.data.length;i++){
                     let jso=user_data.data[i].data
     
@@ -126,15 +161,41 @@ function show_list(){
                     <td id="">${user_data.data[i].id}</td>
                     <td id="">${user_data.data[i].user}</td>
                     <td><button type="button" onclick="delett(${user_data.data[i].id})">remove</button></td>
-                    <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
+                    <td><a href="choosetemp.html">Download</a></td>
                     </tr>`
+
+                    showtemp=showtemp+`
+                    <div class="col">
+                <a href="temp1.html?id=${user_data.data[i].id}" >
+                  <img src="img/temp1.png" alt="template1" width="200px">
+                </a>
+              </div>
+              <div class="col">
+                <a href="temp2.html?id=${user_data.data[i].id}">
+                    <img src="img/temp2.png" alt="template2" width="200px">
+                </a>
+              </div>
+              <div class="col">
+                <a href="temp3.html?id=${user_data.data[i].id}">
+                    <img src="img/temp3.png" alt="template3" width="200px">
+                </a>
+              </div>
+              <div class="col">
+                <a href="temp4.html?id=${user_data.data[i].id}">
+                    <img src="img/temp4.png" alt="template4" width="200px">
+                </a>
+              </div>`
                 }
                 document.getElementById("list_table").innerHTML=listing
+                document.getElementById("showtemp").innerHTML=showtemp
+                console.log(showtemp)
             },
             error: function(err){
         
             }
 })}
+                    // <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
+
 
 function delett(i){
     alert(i)
