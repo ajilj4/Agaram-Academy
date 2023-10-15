@@ -73,7 +73,12 @@ function addmultidata(name,id,tbl_id,ary_obj){
             <td><button type="button" onclick="delet('${[i]}','${ary_obj}')">x</button></td>
             </tr></table>`}
             console.log(htmldata)
-            document.getElementById(tbl_id).innerHTML=htmldata}
+            document.getElementById(tbl_id).innerHTML=htmldata
+            const inputs=document.querySelectorAll("#Company,#role,#year")
+            inputs.forEach(input =>{
+                input.value=""
+            })
+        }
         
         
     }
@@ -161,7 +166,7 @@ function show_list(){
                     <td id="">${user_data.data[i].id}</td>
                     <td id="">${user_data.data[i].user}</td>
                     <td><button type="button" onclick="delett(${user_data.data[i].id})">remove</button></td>
-                    <td><a href="choosetemp.html">Download</a></td>
+                    <td><button type="button" onclick="showtemplate(${i},null)">Download</button></a></td>
                     </tr>`
 
                     showtemp=showtemp+`
@@ -196,6 +201,11 @@ function show_list(){
 })}
                     // <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
 
+function showtemplate(a,b){
+    window.location="choosetemp.html"
+    console.log(b)
+
+}
 
 function delett(i){
     alert(i)
