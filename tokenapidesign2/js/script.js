@@ -160,13 +160,16 @@ $.ajax({
     },
     success: function(res){
         console.log(res)
+        // console.log(box())
+        box()
     },
     error: function(err){
         alert(err)
     }
     
+    
 })
-
+box()
     // auth.createUserWithEmailAndPassword(email_obj,password_obj).then(function(){
     //     let user= auth.currentuser;
 
@@ -240,8 +243,8 @@ function box() {
     <td id="newemail+'${i}'">${apidata.data[i].password}</td>
     <td id="newemail+'${i}'">${apidata.data[i].area}</td>
     
-    <td align="center"><button onclick="update('${data}','${[i]}')">update</button></td>
-    <td align="center"><button onclick="deletes('${data}','${i}')">delete</button></td>
+    <td align="center"><button onclick="update()">update</button></td>
+    <td align="center"><button onclick="deletes()">delete</button></td>
     <tr>`
         }
         document.getElementById("list-table").innerHTML = htmldata;

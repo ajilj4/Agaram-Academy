@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../css/style2.css">
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script> -->
+</head>
+<body>
+    
+    <div class="container">
+        <div id="login">
+            <h1>log in</h1>
+            <form action="">
+            <label>Email : </label>
+            <input type="email" placeholder="" id="emails"><br><br>
+            <label>Password : </label>
+            <input type="password" placeholder="" id="passwords"><br><a href="forgetpas.html">forgot password</a><br><br><br>
+            <button type="button" value="Login" class="bn5" onclick="loginCheck()">login</button> 
+            <button type="button" id="button" class="bn5" onclick="regpage()">Register</button>
+                    
+            </form>
+        </div>
+        <!-- <div class="container"> -->
+            <div id="register" >
+                <h1>Register</h1>
+                    <form action="" style="margin-top: 30px;">
+                        <label for="">Name </label><input type="text" id="name"><br>
+                        <label for="">Email </label><input type="email" id="email"><br>
+                        <label for="">password </label><input type="password" id="password"><br>
+                        <label for="">aadhar </label><input type="text" id="aadhar"><br>
+                        <label for="">address </label><input type="text" id="address"><br>
+                        <label for="">phone </label><input type="text" id="phone"><br>
+                        <label for="">city </label><input type="text" id="city"><br>
+                        <label for="">area </label><input type="text" id="area"><br>
+                        <label for="">pin </label><input type="text" id="pin"><br>
+    
+                        <!-- <label for="">confirm password </label><input type="password" id="c_password"><br><br> -->
+                        <button type="button" onclick="register()" class="bn5">register</button>
+                    </form>
+            </div>
+            <div id="music">
+                <h1>Sound</h1>
+            <audio id="musics" src="Kirmada Bgm - Chotta bheem serial.mp3" autoplay loop ></audio>
+            <button type="button" onclick="onmusic()" class="bn5" style="width: 100px;margin: 10% 40%;">on</button><br>
+            <button type="button" onclick="offmusic()" class="bn5" style="width: 100px;margin: 10% 40%;">off</button>
+
+                <!-- <embed name="GoodEnough" src="Unstoppable - Sia_128-(DJMaza).mp3" loop="false"  autostart="true" autoplay> -->
+             
+        </div>
+        <div id="exit">
+            <h1>exit</h1>
+            <!-- <div style="width:100%;height:0;padding-bottom:57%;position:relative;"><iframe src="https://giphy.com/embed/FxJVMGO7ggluBzeVp6" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/snl-saturday-night-live-season-47-FxJVMGO7ggluBzeVp6">via GIPHY</a></p> -->
+            <div class="gif" style="margin: 100px;height: 500px;"><iframe src="https://giphy.com/embed/FxJVMGO7ggluBzeVp6" width="380" height="242" ></iframe></div>
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+    let a=document.getElementById("musics");
+    function offmusic(){
+    a.pause()
+    
+    }
+    function onmusic(){
+    a.play()
+    
+    }
+    
+</script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/fireb -->
+<script src="/tokenapidesign2/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</html>

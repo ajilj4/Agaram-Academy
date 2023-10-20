@@ -166,44 +166,40 @@ function show_list(){
                     <td id="">${user_data.data[i].id}</td>
                     <td id="">${user_data.data[i].user}</td>
                     <td><button type="button" onclick="delett(${user_data.data[i].id})">remove</button></td>
-                    <td><button type="button" onclick="showtemplate(${i},null)">Download</button></a></td>
+                    <td><button type="button" onclick="showtemplate('${i}')">Download</button></a></td>
                     </tr>`
 
-                    showtemp=showtemp+`
-                    <div class="col">
-                <a href="temp1.html?id=${user_data.data[i].id}" >
-                  <img src="img/temp1.png" alt="template1" width="200px">
-                </a>
-              </div>
-              <div class="col">
-                <a href="temp2.html?id=${user_data.data[i].id}">
-                    <img src="img/temp2.png" alt="template2" width="200px">
-                </a>
-              </div>
-              <div class="col">
-                <a href="temp3.html?id=${user_data.data[i].id}">
-                    <img src="img/temp3.png" alt="template3" width="200px">
-                </a>
-              </div>
-              <div class="col">
-                <a href="temp4.html?id=${user_data.data[i].id}">
-                    <img src="img/temp4.png" alt="template4" width="200px">
-                </a>
-              </div>`
                 }
                 document.getElementById("list_table").innerHTML=listing
-                document.getElementById("showtemp").innerHTML=showtemp
-                console.log(showtemp)
+                // document.getElementById("showtemp").innerHTML=showtemp
+                // console.log(showtemp)
             },
             error: function(err){
-        
+                
             }
 })}
                     // <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
 
-function showtemplate(a,b){
-    window.location="choosetemp.html"
-    console.log(b)
+function showtemplate(i){
+    window.location="choosetemp.html";
+    $.ajax({
+        type:"GET",
+        url:"http://agaram.academy/api/action.php",
+        data:{
+          request : "get_user_resume",
+          user : "ajil",
+        },
+        success: function(res){
+            console.log(i)
+            let user_data=JSON.parse(res)
+            document.getElementById("firsttemp").innerHTML= `<a href="temp4.html?id=${user_data.data[i].id}">`
+            
+        },
+        error: function(err){
+            alert("error")
+        }})
+    
+    
 
 }
 
