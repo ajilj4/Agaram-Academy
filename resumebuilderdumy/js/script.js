@@ -166,13 +166,14 @@ function show_list(){
                     <td id="">${user_data.data[i].id}</td>
                     <td id="">${user_data.data[i].user}</td>
                     <td><button type="button" onclick="delett(${user_data.data[i].id})">remove</button></td>
-                    <td><button type="button" onclick="showtemplate('${i}')">Download</button></a></td>
+                    <td><a href="temp6.html?id=${user_data.data[i].id}"><button type="button">Download</button></td>
                     </tr>`
 
                 }
                 document.getElementById("list_table").innerHTML=listing
                 // document.getElementById("showtemp").innerHTML=showtemp
                 // console.log(showtemp)
+                
             },
             error: function(err){
                 
@@ -180,28 +181,48 @@ function show_list(){
 })}
                     // <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
 
-function showtemplate(i){
-    window.location="choosetemp.html";
-    $.ajax({
-        type:"GET",
-        url:"http://agaram.academy/api/action.php",
-        data:{
-          request : "get_user_resume",
-          user : "ajil",
-        },
-        success: function(res){
-            console.log(i)
-            let user_data=JSON.parse(res)
-            document.getElementById("firsttemp").innerHTML= `<a href="temp4.html?id=${user_data.data[i].id}">`
+// function showtemplate(i,data){
+//     console.log(i)
+    
+//     $.ajax({
+//         type:"GET",
+//         url:"http://agaram.academy/api/action.php",
+//         data:{
+//           request : "get_user_resume",
+//           user : "ajil",
+//         },
+//         success: function(res){
+//             let user_data=JSON.parse(res)
+//             let showtemp=""
+//     showtemp=showtemp+`
+//                 <li><a href="temp4.html?id=${user_data.data[i].id}">
+//                 <img src="img/temp4.png" alt="template4" width="320px">
+//             </a></li>
+//                 <li><a href="temp3.html?id=${user_data.data[i].id}" >
+//                 <img src="img/temp3.png" alt="template3" width="300px">
+//             </a></li>
+//                 <li><a href="temp2.html?id=${user_data.data[i].id}">
+//                 <img src="img/temp2.png" alt="template2" width="300px">
+//             </a></li>
+//                 <li><a href="temp1.html?id=${user_data.data[i].id}"  >
+//                 <img src="img/temp1.png" alt="template1" width="300px">
+//               </a></li>
+//                 <li> <a href="temp5.html?id=${user_data.data[i].id}" >
+//                 <img src="img/temp5.png" alt="template5" width="300px">
+//             </a></li>
+//                 <li><a href="temp6.html?id=${user_data.data[i].id}" >
+//                 <img src="img/temp6.png" alt="template6" width="300px">
+//             </a></li>`
+//             document.getElementById("choosetemp").innerHTML=showtemp
+//             // let user_data=JSON.parse(res)
+//             // document.getElementById("firsttemp").innerHTML= `<a href="temp4.html?id=${user_data.data[i].id}">`
             
-        },
-        error: function(err){
-            alert("error")
-        }})
+//         },
+//         error: function(err){
+//             alert("error")
+//         }})
     
-    
-
-}
+// }
 
 function delett(i){
     alert(i)
@@ -223,9 +244,9 @@ function delett(i){
     })
 }
 
-function getid(i){
+// function getid(i){
     
-}
+// }
 
 function getid(){
 
@@ -243,15 +264,18 @@ function getid(){
          },
         success:function (res){
             console.log(res)
-            let user_display=JSON.parse(res);
-            let conv=user_display.data.data;
+            let userdisplay=JSON.parse(res);
+            let conv=userdisplay.data.data;
             console.log(conv)
             let convet=JSON.parse(conv);
             console.log(convet)
+            $("#ages").html(`${convet.Personal_Details.age}`);
+            $("#tname").html(`${convet.user_name}`);
             $("#name").html(`${convet.user_name}`);
+            $("#job").html(`${convet.user_job}`);
             $("#phone_no").html(`${convet.phone_no}`);
             $("#user_email").html(`${convet.user_email}`);
-            $("#userweb").hide();
+            $("#user_web").html(`${convet.user_web}`);
             $("#address").html(`${convet.address}`);
             $("#detail").html(`${convet.objective}`);
             $("#age").hide();
@@ -266,35 +290,130 @@ function getid(){
             // $("#").html(`${convet.Personal_Details.}`);
             // $("#").html(`${convet.Personal_Details.}`);
             // $("#").html(`${convet.Personal_Details.}`);
-            
-            let list_skill="";
-            for (i=0;i<convet.skills.length;i++){
-                list_skill=list_skill+`<li>${convet.skills[i]}</li>`
-            }
-            document.getElementById("list_skill").innerHTML=list_skill
+            $("#skill1").html(`${convet.skills[0]}`)
+            $("#skill2").html(`${convet.skills[1]}`)
+            $("#skill3").html(`${convet.skills[2]}`)
+            $("#skill4").html(`${convet.skills[3]}`)
+            $("#skill5").html(`${convet.skills[4]}`)
+            $("#skill6").html(`${convet.skills[5]}`)
+            $("#skill7").html(`${convet.skills[6]}`)
+            // let list_skill="";
+            // for (i=0;i<convet.skills.length;i++){
+            //     list_skill=list_skill+`<li>${convet.skills[i]}</li>`
+            // }
+            // $("#list_skill").html(`${list_skill}`)
+
             let list_lang="";
             for (i=0;i<convet.Languages.length;i++){
                 list_lang=list_lang+`<li>${convet.Languages[i]}</li>`
             }
-            document.getElementById("list_lang").innerHTML=list_lang
-            let list_edu=""
-            for(i=0;i<convet.educational_details.length;i++){
-                list_edu=list_edu+`<tr>
-                <td>${convet.educational_details[i].level}</td>
-                <td>${convet.educational_details[i].institute}</td>
-                <td>${convet.educational_details[i].percentage}</td>
-                <td>${convet.educational_details[i].year}</td></tr>`
-            }
-            document.getElementById("list_edu").innerHTML=list_edu
-            let list_work=""
-            for(i=0;i<convet.work_exp.length;i++){
-                list_work=list_work+`<tr>
-                <td>${convet.work_exp[i].company}</td>
-                <td>${convet.work_exp[i].role}</td>
-                <td>${convet.work_exp[i].year}</td>
-                </tr>`
-            }
-            document.getElementById("list_work").innerHTML=list_work
+            $("#list_lang").html(`${list_lang}`)
+            // let list_edu=""
+            // for(i=0;i<convet.educational_details.length;i++){
+        if(convet.educational_details.length===2){
+                $("#level1").html(`${convet.educational_details[0].level}`)
+                $("#institute1").html(`${convet.educational_details[0].institute}`)
+                $("#percentage1").html(`${convet.educational_details[0].precentage}`)
+                $("#year1").html(`${convet.educational_details[0].year}`)
+
+                $("#level2").html(`${convet.educational_details[1].level}`)
+                $("#institute2").html(`${convet.educational_details[1].institute}`)
+                $("#percentage2").html(`${convet.educational_details[1].precentage}`)
+                $("#year2").html(`${convet.educational_details[1].year}`)
+        }
+        else if(convet.educational_details.length===3){
+            $("#level1").html(`${convet.educational_details[0].level}`)
+                $("#institute1").html(`${convet.educational_details[0].institute}`)
+                $("#percentage1").html(`${convet.educational_details[0].precentage}`)
+                $("#year1").html(`${convet.educational_details[0].year}`)
+
+                $("#level2").html(`${convet.educational_details[1].level}`)
+                $("#institute2").html(`${convet.educational_details[1].institute}`)
+                $("#percentage2").html(`${convet.educational_details[1].precentage}`)
+                $("#year2").html(`${convet.educational_details[1].year}`)
+
+                 $("#level3").html(`${convet.educational_details[2].level}`)
+                $("#institute3").html(`${convet.educational_details[2].institute}`)
+                $("#percentage3").html(`${convet.educational_details[2].precentage}`)
+                $("#year3").html(`${convet.educational_details[2].year}`)
+        }
+        else if(convet.educational_details.length===4){
+            $("#level1").html(`${convet.educational_details[0].level}`)
+                $("#institute1").html(`${convet.educational_details[0].institute}`)
+                $("#percentage1").html(`${convet.educational_details[0].precentage}`)
+                $("#year1").html(`${convet.educational_details[0].year}`)
+
+                $("#level2").html(`${convet.educational_details[1].level}`)
+                $("#institute2").html(`${convet.educational_details[1].institute}`)
+                $("#percentage2").html(`${convet.educational_details[1].precentage}`)
+                $("#year2").html(`${convet.educational_details[1].year}`)
+
+                 $("#level3").html(`${convet.educational_details[2].level}`)
+                $("#institute3").html(`${convet.educational_details[2].institute}`)
+                $("#percentage3").html(`${convet.educational_details[2].precentage}`)
+                $("#year3").html(`${convet.educational_details[2].year}`)
+
+                $("#level4").html(`${convet.educational_details[3].level}`)
+                $("#institute4").html(`${convet.educational_details[3].institute}`)
+                $("#percentage4").html(`${convet.educational_details[3].precentage}`)
+                $("#year4").html(`${convet.educational_details[3].year}`)
+        }else{
+            $("#level1").html(`${convet.educational_details[0].level}`)
+                $("#institute1").html(`${convet.educational_details[0].institute}`)
+                $("#percentage1").html(`${convet.educational_details[0].precentage}`)
+                $("#year1").html(`${convet.educational_details[0].year}`)
+
+        }
+               
+
+               
+                // list_edu=list_edu+`<tr>
+                // <td>${convet.educational_details[i].level}</td>
+                // <td>${convet.educational_details[i].institute}</td>
+                // <td>${convet.educational_details[i].percentage}</td>
+                // <td>${convet.educational_details[i].year}</td></tr>`
+            
+            // $("#list_edu").html(`${list_edu}`)
+        if(convet.work_exp.length===2){
+            $("#company1").html(`${convet.work_exp[0].Company}`)
+            console.log(`${convet.work_exp[0].year}`)
+            $("#role1").html(`${convet.work_exp[0].role}`)
+            $("#wyear1").html(`${convet.work_exp[0].year}`)
+
+            $("#company2").html(`${convet.work_exp[1].Company}`)
+            $("#role2").html(`${convet.work_exp[1].role}`)
+            $("#wyear2").html(`${convet.work_exp[1].year}`)
+
+        }
+        else if(convet.work_exp.length===3){
+            $("#company1").html(`${convet.work_exp[0].Company}`)
+            console.log(`${convet.work_exp[0].year}`)
+            $("#role1").html(`${convet.work_exp[0].role}`)
+            $("#wyear1").html(`${convet.work_exp[0].year}`)
+
+            $("#company2").html(`${convet.work_exp[1].Company}`)
+            $("#role2").html(`${convet.work_exp[1].role}`)
+            $("#wyear2").html(`${convet.work_exp[1].year}`)
+
+            $("#company3").html(`${convet.work_exp[2].Company}`)
+            $("#role3").html(`${convet.work_exp[2].role}`)
+            $("#wyear3").html(`${convet.work_exp[2].year}`)
+        }
+        else{
+            $("#company1").html(`${convet.work_exp[0].Company}`)
+            console.log(`${convet.work_exp[0].year}`)
+            $("#role1").html(`${convet.work_exp[0].role}`)
+            $("#year1").html(`${convet.work_exp[0].year}`)
+        }
+            // let list_work=""
+            // for(i=0;i<convet.work_exp.length;i++){
+            //     list_work=list_work+`<tr>
+            //     <td>${convet.work_exp[i].company}</td>
+            //     <td>${convet.work_exp[i].role}</td>
+            //     <td>${convet.work_exp[i].year}</td>
+            //     </tr>`
+            // }
+            // $("#list_work").html(`${list_work}`)
 
         },
         error:function(err){

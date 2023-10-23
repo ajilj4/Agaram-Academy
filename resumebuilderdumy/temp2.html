@@ -16,30 +16,30 @@
 	    <div class="r_left_sub">
 	      <div class="r_aboutme">
 	        <h2>About me</h2>
-	        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit accusamus quisquam accusantium nulla? Dolorum ipsa sed perspiciatis nemo aliquam quibusdam, alias quae totam nulla nihil.</p>
+	        <p id="detail">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit accusamus quisquam accusantium nulla? Dolorum ipsa sed perspiciatis nemo aliquam quibusdam, alias quae totam nulla nihil.</p>
 	      </div>
 	      <div class="r_skills">
 	        <h2>Skills</h2>
 	        <ul>
 	          <li>
 	            <p><i class="fa-solid fa-code"></i></p>
-	            <p>Web Development</p>
+	            <p id="skill1">Web Development</p>
 	          </li>
 	          <li>
 	            <p><i class="fa-solid fa-pen-nib"></i></p>
-	            <p>Web Designing</p>
+	            <p id="skill2">Web Designing</p>
 	          </li>
 	          <li>
 	            <p><i class="fa-solid fa-video"></i></p>
-	            <p>Video Editing</p>
+	            <p id="skill3">Video Editing</p>
 	          </li>
 	          <li>
 	            <p><i class="fa-solid fa-headphones"></i></p>
-	            <p>Sound Mixing</p>
+	            <p id="skill4">Sound Mixing</p>
 	          </li>
 	          <li>
 	            <p><i class="fa-solid fa-image"></i></p>
-	            <p>Photoshop Editing</p>
+	            <p id="skill5">Photoshop Editing</p>
 	          </li>
 	        </ul>
 	      </div>
@@ -67,17 +67,17 @@
 	</div>
 	<div class="resume_right">
 	    <div class="r_namerole">
-	      <p>Alexander</p>
-	      <p>Wood</p>
-	      <p class="role">Web Developer</p>
+	      <p id="tname">Alexander</p>
+	      <!-- <p>Wood</p> -->
+	      <p class="role" id="job">Web Developer</p>
 	    </div>
 	    <div class="r_info">
 	      <ul>
 	        <li>
-	          <p>alexwood@gmail.com</p>
+	          <p id="user_email">alexwood@gmail.com</p>
 	        </li>
 	        <li>
-	          <p>+15 120 5677684</p>
+	          <p id="phone_no">+15 120 5677684</p>
 	        </li>
 	      </ul>
 	    </div>
@@ -87,28 +87,28 @@
 	        <ul>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2010-2013</p>
+	              <p id="year1">2010-2013</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Web Masters College</p>
+	              <p id="institute1">Web Masters College</p>
 	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2013-2017</p>
+	              <p id="year2">2013-2017</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Web Designing College</p>
+	              <p id="institute2">Web Designing College</p>
 	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2017-2018</p>
+	              <p id="year3">2017-2018</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Video Designing College</p>
+	              <p id="institute3">Video Designing College</p>
 	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
@@ -119,29 +119,29 @@
 	        <ul>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2015-2017</p>
+	              <p id="year1">2015-2017</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Google</p>
-	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
+	              <p id="company1">Google</p>
+	              <p id="role1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2017-2019</p>
+	              <p id="year2">2017-2019</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Facebook</p>
-	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
+	              <p id="company2">Facebook</p>
+	              <p id="role2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
 	          <li>
 	            <div class="r_ed_left">
-	              <p>2019-2022</p>
+	              <p id="year3">2019-2022</p>
 	            </div>
 	            <div class="r_ed_right">
-	              <p>Instagram</p>
-	              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
+	              <p id="company3">Instagram</p>
+	              <p id="role3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa earum optio id iure reprehenderit</p>
 	            </div>
 	          </li>
 	        </ul>
@@ -149,6 +149,7 @@
 	    </div>
 	</div>
 </section>
+<button type="button" onclick="prnt()" style="padding: 10px 50px; background-color: green;margin: 50px 35%;color: white;font-size: larger;">Print</button>
 
 </body>
 <script src="js/script.js"></script>
