@@ -19,7 +19,11 @@
       }
       .right img{
         border-radius: 10px;
+        min-width: 400px;
+        overflow: scroll;
+
       }
+      
       .left img{
         width: 340px;
         height: 500px;
@@ -28,18 +32,26 @@
       }
       .left img:hover{
         transform: scale(1.1);
-        border: 2px solid black;
+        border: 5px solid rgb(53, 52, 52);
 
       }
       .box{
         display: flex;margin-top: 40px;flex-direction: row;
       }
       .right{
-        width: 20%;
-        height: 1000px;
-        padding: 1% 0 1% 1%;
+        /* /* border: 5px solid black; */
+         border-radius: 50px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        padding: 0 2.5%;
         position: sticky;
         top: 100px;
+        background-color: rgb(234, 235, 236);
+        overflow: hidden;
+        box-shadow: 0 0 10px rgb(58, 57, 57);
+        
       }
       footer{
         height: 100px; display: flex;justify-content: center;align-items:end;
@@ -110,37 +122,37 @@
         </div> --> 
       </div>
       <div class="box">
-        <div class="left" style="width: 80%;">
+        <div class="left" style="width: 75%;">
          <h3>Normal Templates</h3>
-         <a href="temp1.html"><img src="img/temp1.png" alt="img"></a>
-         <a href="temp2.html"><img src="img/temp2.png" alt="img"></a>
-         <a href="temp4.html"><img src="img/temp4.png" alt="img"></a>
+         <div id="listfreetemp">
+
+         </div>
         
         <h3 style="margin-top: 50px;">Premium Templates &#9733; </h3>
-         <a href="temp3.html"><img src="img/temp3.png" alt="img"></a>
-         <a href="temp5.html"><img src="img/temp5.png" alt="img"></a>
-         <a href="temp6.html"><img src="img/temp6.png" alt="img"></a>
+        <div id="listpretemp">
+
+        </div>
         </div>
         <div class="right" >
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/temp1.png" class="d-block w-100" alt="...">
+                <img src="img/temp1.png" class="d-block " alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/temp2.png" class="d-block w-100" alt="...">
+                <img src="img/temp2.png" class="d-block" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/temp3.png" class="d-block w-100" alt="...">
+                <img src="img/temp3.png" class="d-block" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/temp4.png" class="d-block w-100" alt="...">
+                <img src="img/temp4.png" class="d-block" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/temp5.png" class="d-block w-100" alt="...">
+                <img src="img/temp5.png" class="d-block" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/temp6.png" class="d-block w-100" alt="...">
+                <img src="img/temp6.png" class="d-block" alt="...">
               </div>
             </div>
           </div>
@@ -148,7 +160,8 @@
       </div>
       </main>
       <footer >
-        <button onclick="showlist()" style="padding: 30px 50px;border-radius: 300% 150% 100% 100%;background-color: rgb(50, 224, 50);position: fixed;bottom: -20px;"><i class="fa fa-home" style="font-size:56px"></i></button>
+        <!-- <button onclick="backpag()">htdjxdfxggdhgxhfxhfxfxfxgfg</button> -->
+        <button onclick="home()" style="padding: 30px 50px;border-radius: 300% 150% 100% 100%;background-color: rgb(50, 224, 50);position: fixed;bottom: -20px;"><i class="fa fa-home" style="font-size:56px"></i></button>
       </footer>
         
     </div>
@@ -157,10 +170,11 @@
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script>const queryString = window.location.search;
-  const getparam=new URLSearchParams(queryString);
-  let idd=getparam.get('id')</script>
 <script>
-    getid()
+  const queryString = window.location.search;
+  const getparam=new URLSearchParams(queryString);
+  let idd=getparam.get('id')
+    choosetemp(idd)
 </script>
+<!-- <script>getid()</script> -->
 </html>

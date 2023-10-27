@@ -141,6 +141,7 @@ function showlist(){
 }
 
 function show_list(){
+    
     $.ajax({
             type:"GET",
             url:"http://agaram.academy/api/action.php",
@@ -166,7 +167,7 @@ function show_list(){
                     <td id="">${user_data.data[i].id}</td>
                     <td id="">${user_data.data[i].user}</td>
                     <td><button type="button" onclick="delett(${user_data.data[i].id})">remove</button></td>
-                    <td><a href="temp6.html?id=${user_data.data[i].id}"><button type="button">Download</button></td>
+                    <td><a href="choosetemp.html?id=${user_data.data[i].id}"><button type="button">Download</button></td>
                     </tr>`
 
                 }
@@ -180,7 +181,42 @@ function show_list(){
             }
 })}
                     // <td><a href="showresume.html?id=${user_data.data[i].id}">redirect</a></td>
-
+function choosetemp(id){
+    $.ajax({
+        type:"GET",
+        url:"http://agaram.academy/api/action.php",
+        data:{
+          request : "get_user_resume",
+          user : "ajil",
+        },
+        success: function(res){
+            let user_data=JSON.parse(res)
+            let user=user_data.data;
+            let freetemp="";
+            let pretemp="";
+            for (let i=0;i<user.length;i++){
+                if(user[i].id===id){
+                    console.log(i)
+                    freetemp=freetemp +`
+                    <a href="temp1.html?id=${user[i].id}"><img src="img/temp1.png" alt="img"></a>
+                    <a href="temp2.html?id=${user[i].id}"><img src="img/temp2.png" alt="img"></a>
+                    <a href="temp4.html?id=${user[i].id}"><img src="img/temp4.png" alt="img"></a>`
+                    pretemp=pretemp+`
+                    <a href="temp3.html?id=${user[i].id}"><img src="img/temp3.png" alt="img"></a>
+                     <a href="temp5.html?id=${user[i].id}"><img src="img/temp5.png" alt="img"></a>
+                     <a href="temp6.html?id=${user[i].id}"><img src="img/temp6.png" alt="img"></a>`
+                }
+            }
+            $("#listfreetemp").html(freetemp);
+            $("#listpretemp").html(pretemp);
+        },
+        error: function(err){
+            console(err)
+        }
+    })
+    
+      console.log(idd)
+}
 // function showtemplate(i,data){
 //     console.log(i)
     
@@ -448,5 +484,9 @@ function getid(){
 // })
 
 function prnt(){
+    $("#hidebtn").hide()
     window.print()
+
 }
+// let backpag=()=> window.history.back()
+let home=()=>window.location="index.html"
