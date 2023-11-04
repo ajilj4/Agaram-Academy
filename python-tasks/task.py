@@ -9,6 +9,9 @@ def operations(num1,operator,num2) :
         return num1 / num2
     elif operator == "**":
         return num1 ** num2
+    else:
+        print("please check your value")
+        
     
 fst_num = int(input("Enter the first number : "))
 operater = input("Enter the opertaor : ")

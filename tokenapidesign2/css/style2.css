@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(bg.jpg);
+    background-image: url(../img/bg.jpg);
     background-repeat: repeat-y;
     background-position: bottom;
     background-size: cover;
@@ -16,7 +16,7 @@ body{
 }
 
 #login ,#music,#exit{
-    background-image: url(pngwing.com.png);
+    background-image: url(../img/pngwing.com.png);
     background-repeat: no-repeat;
     background-size: cover;
     

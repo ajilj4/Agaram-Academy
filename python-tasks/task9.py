@@ -1,4 +1,4 @@
-nums_list = [2, 5, 8, 1, 9, 3, 7]
+nums_list = [2, 5, 8, 1, 9, 3, 7,4646]
 # max1=max(nums_list)
 # min1 =min(nums_list)
 # output=max1-min1
@@ -10,4 +10,4 @@ for num in nums_list:
         mini=num
     if num>=maxi:
         maxi=num
-print(maxi-mini)
+print(maxi)
