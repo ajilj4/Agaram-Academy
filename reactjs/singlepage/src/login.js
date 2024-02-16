@@ -5,9 +5,9 @@ import axios from 'axios';
 
 export default function Login(props){
 
-   useEffect(()=>{
-    login()
-   },[])
+//    useEffect(()=>{
+//     login()
+//    },[])
 
     const navigate = useNavigate();
 

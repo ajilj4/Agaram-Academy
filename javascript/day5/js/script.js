@@ -19,7 +19,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-let alldata = []
+// let alldata = []
 let db = firebase.database();
 let auth= firebase.auth();
 let dataes = db.ref("user");

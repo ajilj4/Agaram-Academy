@@ -11,9 +11,10 @@ import {
 
 export default function App(){
 
-  useEffect(()=>{
-    alert("hi")
-  })
+  
+  // useEffect(()=>{
+  //   alert("hi")
+  // })
 
     let [isLogin,setisLogin]=useState({
       condition:false,

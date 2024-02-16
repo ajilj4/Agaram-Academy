@@ -1,3 +1,4 @@
+
 let resume_user= {};
 let temp={};
 
@@ -151,15 +152,18 @@ function show_list(){
             },
             success: function(res){
                 let user_data=JSON.parse(res)
-                console.log(res)
+                console.log(user_data.data)
+                
                 // let jso=user_data.data[0].data
                 // let jon=JSON.parse(jso)
                 // console.log(jon.user_name)
                 let listing="";
                 let showtemp="";
+
                 for (i=0;i<user_data.data.length;i++){
-                    let jso=user_data.data[i].data
-    
+                    // var jso=JSON.parse(user_data.data[i].data)
+                    // a=user_data.data[i].data
+                    // console.log(a)
                 // let jon=JSON.parse(jso)
                 // console.log(jon.user_name)
                     console.log(user_data.data[i].id)

@@ -130,6 +130,6 @@ function login(){
 }
 function registerpage(){
     
-    window.location=""
+    window.location="registerpage.html"
 
 }

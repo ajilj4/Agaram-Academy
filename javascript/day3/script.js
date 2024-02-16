@@ -19,7 +19,7 @@
 //     ]
     
 //     localStorage.setItem("user",JSON.stringify(userDetails))
-// window.reload
+
     function loger(){
         alert("Success")
     }
@@ -38,8 +38,8 @@
                 document.getElementById("login").style.display="none"
                 document.getElementById("top").style.display="block"
                 console.log()
-                document.getElementById("intro").innerHTML=`Welcome ${n}`
-                box()
+                // document.getElementById("intro").innerHTML=`Welcome ${n}`
+                // box()
         
 
 
