@@ -1,4 +1,6 @@
 // const firebaseConfig = {
+   
+
 
 
 //     apiKey: "AIzaSyA95ihC-LnszUkBiBHjbDFobzlAO7yIz4o",
@@ -71,6 +73,7 @@ function loginCheck() {
         success:function(res){
             a=JSON.parse(res)
             if (a.status==="success"){
+                localStorage.setItem("loggedIn", true)
                 window.location="home.html"
                 window.onload=box()
                 
@@ -129,7 +132,7 @@ function loginCheck() {
 
 function logout() {
     localStorage.removeItem("loggedIn")
-    window.location = "login.html"
+    window.location = "index.html"
 }
 function register() {
     let name_obj = document.getElementById("name").value;
@@ -161,6 +164,7 @@ $.ajax({
     success: function(res){
         console.log(res)
         // console.log(box())
+        alert("please login")
         box()
     },
     error: function(err){
@@ -351,11 +355,12 @@ function deletes(mail,i) {
 //     })
 // }
 
-// function comebackloginpage() {
-//     alert("ok")
-//     window.location = "login.html"
 
-// }
+
+
+
+
+
 
 
 

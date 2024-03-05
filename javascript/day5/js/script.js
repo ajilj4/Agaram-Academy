@@ -61,28 +61,34 @@ function loginCheck() {
     let login_password = document.getElementById("passwords").value;
      
     auth.signInWithEmailAndPassword(login_email,login_password).then(function(){
-        let user=currentuser;
+        let user = currentuser;
     })
 
     dataes.once(`value`).then(shot => {
         let data = shot.val();
-        console.log(data)
-
+        // console.log(data)
+        let islogin= false
         for (let i = 0; i < data.length; i++) {
             var e = data[i].email
             var p = data[i].password
             var n = data[i].name
+            
             // console.log(details[i].email,details[i].password,details[i].name)
             if (e == login_email && p == login_password) {
+                
                 localStorage.setItem("loggedIn", true)
                 localStorage.setItem("loginperson", n)
 
                 window.location = "home.html"
                 box()
-
+                islogin = true
                 alert("Success")
 
             }
+            
+        }
+        if (!islogin){
+            alert("Please check your email or password")
         }
     })
 }
@@ -153,6 +159,7 @@ function box() {
 
         let htmldata = "";
         for (let i = 0; i < data.length; i++) {
+           
             htmldata = htmldata + `<tr>
     <td id="newname+'${i}'">${data[i].name}</td>
     <td id="newemail+'${i}'">${data[i].email}</td>
@@ -160,6 +167,7 @@ function box() {
     <td align="center"><button onclick="deletes('${data[i].email}')">delete</button></td>
     <tr>`
         }
+    
         document.getElementById("list-table").innerHTML = htmldata;
     })
 }
